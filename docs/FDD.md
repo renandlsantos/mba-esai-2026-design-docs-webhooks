@@ -19,7 +19,7 @@ Inclui desenho de outbox, worker, cadastro, assinatura, retry, dead letter e con
 | `src/routes/index.ts` | buildApiRouter registra módulos existentes | Registrar router de webhooks e rota administrativa de replay |
 | `src/middlewares/auth.middleware.ts` | authenticate verifica JWT de operador; requireRole restringe roles | CRUD autenticado; replay requireRole('ADMIN'); nunca derivar customer_id do JWT |
 | `src/middlewares/error.middleware.ts` | Trata AppError, Zod e Prisma; loga erro inesperado | Reutilizar; erros de domínio com prefixo WEBHOOK_ |
-| `src/shared/errors/app-error.ts` | AppError(statusCode, errorCode, details) | Usar estrutura existente para erros de cadastro/replay |
+| `src/shared/errors/app-error.ts` | AppError(message, statusCode, errorCode, details?) | Usar estrutura existente para erros de cadastro/replay |
 | `prisma/schema.prisma` | MySQL, UUIDs e relações Order/Customer/OrderStatusHistory | Adicionar modelos de endpoint, assinatura, outbox, tentativa e dead letter sem alterar semântica de pedidos |
 
 Arquivos novos **propostos**, ainda inexistentes: `src/worker.ts`, `src/modules/webhooks/webhook.controller.ts`, `webhook.service.ts`, `webhook.repository.ts`, `webhook.routes.ts`, `webhook.schemas.ts`, `webhook.worker.ts` e `webhook.processor.ts`. Seguir organização controller/service/repository/routes/schema; manter lógica de assinatura e calendário de retry testáveis sem rede.

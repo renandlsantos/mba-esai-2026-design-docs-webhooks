@@ -30,3 +30,6 @@ Teste independente: fontes/localizações conferíveis, links válidos e base in
 
 ## Dependencies and parallelism
 T001→T002→T003→T004. US1: T005 e T006 podem ser redigidas em paralelo; T007 consolida decisões. US2 sucede US1. US3: README pode ser redigido enquanto tracker é conferido; validação depende de todos. US2 é uma tarefa única, sem paralelismo artificial. MVP documental: US1; entrega completa exige US2/US3 e polish.
+
+## Phase 7 — Correção da revisão independente
+- [x] T014 [US2] Corrigir assinatura de AppError em docs/FDD.md conforme src/shared/errors/app-error.ts: message é argumento obrigatório antes de statusCode/errorCode; details é opcional.

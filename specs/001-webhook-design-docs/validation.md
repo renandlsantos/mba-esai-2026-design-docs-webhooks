@@ -18,3 +18,6 @@ As questões de domínio abertas são registradas para a implementação futura,
 
 ## Resultado final
 `python3 scripts/validate_docs.py` → PASS: 500 checks, 0 falhas; 53/68 linhas da transcrição, 15 de código, 9 exemplos JSON válidos. `git diff --check` → exit 0. Código/transcrição/schema/testes conferidos byte a byte contra a base.
+
+## Revisão independente
+R299-01 apontou assinatura incompleta de AppError no FDD. Corrigida para `AppError(message, statusCode, errorCode, details?)`, conferida no código original. Validador documental repetido após a alteração.
