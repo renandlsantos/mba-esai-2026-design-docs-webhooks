@@ -9,3 +9,10 @@ coverage/
 .idea/
 .vscode/
 *.tsbuildinfo
+
+# Local tooling and credentials
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.specify/.cache/
